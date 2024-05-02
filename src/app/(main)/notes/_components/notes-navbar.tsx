@@ -1,6 +1,7 @@
 "use client";
 
 import logo from "@/assets/logo.png";
+import AddNoteDialog from "@/components/global/add-note-dialog";
 import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
 import { Plus } from "lucide-react";
@@ -33,6 +34,7 @@ export default function NotesNavBar() {
           </div>
         </div>
       </div>
+      <AddNoteDialog open={showAddNoteDialog} setOpen={setShowAddNoteDialog} />
     </>
   );
 }
