@@ -101,7 +101,7 @@ export default function AddEditNoteDialog({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="w-[90vw]">
         <DialogHeader>
-          <DialogTitle>Add Note</DialogTitle>
+          <DialogTitle>{noteToEdit ? "Edit Note" : "Add Note"}</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
