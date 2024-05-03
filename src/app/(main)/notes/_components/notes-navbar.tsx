@@ -1,7 +1,7 @@
 "use client";
 
 import logo from "@/assets/logo.png";
-import AddNoteDialog from "@/components/global/add-note-dialog";
+import AddEditNoteDialog from "@/components/global/add-edit-note-dialog";
 import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
 import { Plus } from "lucide-react";
@@ -10,7 +10,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function NotesNavBar() {
-  const [showAddNoteDialog, setShowAddNoteDialog] = useState(false);
+  const [showAddEditNoteDialog, setShowAddEditNoteDialog] = useState(false);
 
   return (
     <>
@@ -27,14 +27,17 @@ export default function NotesNavBar() {
                 elements: { avatarBox: { width: "2.5rem", height: "2.5rem" } },
               }}
             />
-            <Button onClick={() => setShowAddNoteDialog(true)}>
+            <Button onClick={() => setShowAddEditNoteDialog(true)}>
               <Plus size={20} className="mr-2" />
               Add Note
             </Button>
           </div>
         </div>
       </div>
-      <AddNoteDialog open={showAddNoteDialog} setOpen={setShowAddNoteDialog} />
+      <AddEditNoteDialog
+        open={showAddEditNoteDialog}
+        setOpen={setShowAddEditNoteDialog}
+      />
     </>
   );
 }
